@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Jubilant Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        tr, td {
+            padding: 10px;
+        }
+        .table input {
+            padding: 9px;
+            border-radius: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: blue;
+        }
+        input[type="reset"]:hover {
+            background-color: red;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert("Button clicked!");
+            });
+            $("#btn2").dblclick(function(){
+                alert("Button double-clicked!");
+            });
+            $("#btn3").mouseenter(function(){
+                $(this).addClass('highlight');
+            });
+            $("#btn3").mouseleave(function(){
+                $(this).removeClass('highlight');
+            });
+            $("#btn4").hover(function(){
+                $(this).addClass('highlight');
+            }, function(){
+                $(this).removeClass('highlight');
+            });
+
+            // Right-click event
+            $(document).on("contextmenu", function(e){
+                e.preventDefault();
+                alert("Right-click is disabled on this page!");
+            });
+
+            // Key press event
+            $(document).keypress(function(e){
+                if(e.which == 13) { // if user presses 'Enter' key
+                    alert("You pressed the 'Enter' key!");
+                }
+            });
+
+            $("#ajax-btn").click(function(){
+                var method = $("#method").val();
+                var data = $("#data").val();
+                var id = $("#id").val();
+                if((method == 'POST' || method == 'PATCH') && data === ''){
+                    alert('Please enter a valid name');
+                    return;
+                }
+                if(method == 'POST' && data !== '') alert(data + "Added!");
+
+                $.ajax({
+                    url: "http://localhost:3000/students/" + (id || ""),
+                    type: method,
+                    contentType: "application/json",
+                    data: JSON.stringify({name: data}),
+                    success: function(response){
+                        $("#at").html(response);
+                        if(method == 'POST'){
+                            alert('Name successfully added');
+                        }
+                    },
+                    error: function(xhr, status, error){
+                        if(xhr.status == 404) {
+                            alert('Invalid ID');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Jubilant Homepage</h1>
+        <p>This is a simple interactive homepage with jQuery.</p>
+    </header>
+
+    <h2>Interactive Page with jQuery</h2>
+
+    <button id="btn1">Click me</button>
+    <button id="btn2">Double-click me</button>
+    <button id="btn3">Hover over me</button>
+    <button id="btn4">Hover in/out me</button>
+
+     <footer>
+        <p>Copyright © 2024 My Jubilant Homepage</p>
+    </footer>
+
+    <button onclick="loaddata('GET')">GET</button>
+    <button onclick="loaddata('POST')">POST</button>
+    <button onclick="loaddata('PATCH')">PATCH</button>
+    <button onclick="loaddata('DELETE')">DELETE</button>
+    <div id="at">WELCOME TO AT-a-AK++</div>
+    <input type="text" id="data" placeholder="Enter data here">
+    <input type="text" id="id" placeholder="Enter ID here">
+</body>
+</html>

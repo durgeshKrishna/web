@@ -1,0 +1,33 @@
+body{
+	font-weight : bold;
+	font-size : 18;
+}
+
+.main{
+	color : white;
+	background-color : black;
+
+	text-align : center;
+	
+	align-items : center;
+	justify-content : center;
+	display : flex;
+	flex-direction : column;
+
+	overflow-y : auto;
+	scrollable-behaviour : auto;
+
+	width : 400px;
+	height : 4600px;
+	top : 50%;
+	left : 50%;
+	position : absolute;
+	transform : translate(-50%,-50%);
+}
+table{
+	padding : 20px;
+}
+tr,td{
+	padding : 10px;
+}
+

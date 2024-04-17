@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<link rel = "stylesheet" href = "design.css">
+</head>
+<body>
+<div class = "container">
+	CLIENT-SIDE FORM DESIGN & VALIDATION
+	<form action="Login.html">
+		<table class = "table">
+			<tr>
+				<td>Username </td><td>:</td>
+				<td> <input type = "text" id='name1' placeholder = "username" minlength = 4> </td>
+			</tr>			
+			<tr>
+				<td>Email <td>:</td>
+				<td> <input type = "text" id="email1" placeholder = "Email" required> </td>
+			</tr>
+			<tr>
+				<td>Password <td>:</td>
+				<td> <input type = "text" id="password1" placeholder = "Password" required> </td>
+			</tr>
+
+			<tr>
+				<td>Gender <td>:</td>
+				<td>Male <input type = "radio" name="term" required>
+				Female <input type = "radio" name="term" required> </td>
+			</tr>
+			<tr>		
+		</table>
+<input type = "submit" onclick="Submit1()" value = "SUBMIT">
+			<input type = "reset" value = "CLEAR">
+			
+	</form>
+
+</div>
+
+<script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<link rel = "stylesheet" href = "design.css">
+</head>
+<body>
+<div class = "container">
+	CLIENT-SIDE FORM DESIGN & VALIDATION
+	<form>
+		<table class = "table">
+			<tr>
+				<td>Username </td><td>:</td>
+				<td> <input type = "text" placeholder = "username" minlength = 4 required> </td>
+			</tr>			
+			<tr>
+				<td>Email <td>:</td>
+				<td> <input type = "email" placeholder = "Email" required> </td>
+			</tr>
+			<tr>
+				<td>Password <td>:</td>
+				<td> <input type = "password" placeholder = "Password" pattern = "(?=.*[A-Z])(?=.*[a-z])(?=.*d).{8,}" required> </td>
+			</tr>
+
+			<tr>
+				<td>Gender <td>:</td>
+				<td>Male <input type = "radio" name="term" >
+				Female <input type = "radio" name="term" > </td>
+			</tr>
+			<tr>
+				<td>Mobile No. <td>:</td>
+				<td> <input type = "tel" placeholder = "mobile number" required> </td>
+			</tr>
+			<tr>
+				<td>DOB <td>:</td>
+				<td> <input type = "date" placeholder = "DOB" min = "2000-01-01" max = "2007-12-01" required> </td>
+			</tr>
+			<tr>		
+		</table>
+<input type = "submit" 
+value = "SUBMIT">
+			<input type = "reset" value = "CLEAR">
+			
+	</form>
+
+</div>
+
+</body>
+
+
+</html>
