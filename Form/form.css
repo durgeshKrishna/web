@@ -1,0 +1,46 @@
+h1{
+    color: blue;
+    text-align: center;
+    font-size: 40px;
+}
+.btn button{
+    text-align: center;
+    color: wheat;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    font-weight: bold;
+    background-color: blue;
+}
+label,p{
+    font-size: 25px;
+    color: blue;
+    font-weight: lighter;
+}
+.btn {
+    text-align: center;
+}
+input[type=text],input[type=tel],input[type=number],input[type=email]{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+input[type=radio]{
+    background-color: aqua;
+}
+body{
+    background-color:rgb(205, 247, 233);
+}
+/* .cont{
+    text-align: center;
+} */
+fieldset{
+    background-color: aliceblue;
+    border-radius: 10px;
+    border-color: aquamarine;
+    margin-left: 25%;
+    width: 550px;
+
+}
